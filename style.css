@@ -2,3 +2,47 @@
   margin: 0;
   padding: 0;
 }
+body {
+  font-family: "Press Start 2P", sans-serif;
+  color: #eee;
+  background-color: #222;
+}
+/*HEADER*/
+header {
+  position: relative;
+  border-bottom: 7px solid #eee;
+  height: 250px;
+  padding: 20px;
+}
+#mini-box-1 {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-again {
+  font-family: "Press Start 2P", sans-serif;
+  border: none;
+  background-color: #eee;
+  padding: 20px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.btn-again:hover {
+  background-color: #eeeeeed2;
+  transition: 0.2s;
+}
+#h1-1 {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 43px;
+}
+.number {
+  display: inline-block;
+  background-color: #eee;
+  color: #222;
+  padding: 40px;
+  font-size: 45px;
+  position: absolute;
+  left: 42%;
+  bottom: -60px;
+}
