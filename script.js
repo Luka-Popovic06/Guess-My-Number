@@ -47,3 +47,11 @@ function highscores() {
     highscore.textContent = score.textContent;
   }
 } //????
+function backgrounColor() {
+  if (guessNumber === secretNumber.textContent) {
+    body.style.backgroundColor = '#60b346';
+    secretNumber.style.padding = '55px';
+  } else if (number === 0) {
+    body.style.backgroundColor = 'red';
+  }
+}
