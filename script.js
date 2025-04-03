@@ -33,3 +33,12 @@ function messages() {
     message.textContent = '🎉 Correct Number!';
   }
 }
+function minus() {
+  if (guessNumber > secretNumber.textContent) {
+    number = number - value;
+    score.textContent = number;
+  } else if (guessNumber < secretNumber.textContent) {
+    number = number - value;
+    score.textContent = number;
+  }
+}
