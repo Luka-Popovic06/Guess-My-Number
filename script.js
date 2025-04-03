@@ -42,3 +42,8 @@ function minus() {
     score.textContent = number;
   }
 }
+function highscores() {
+  if (guessNumber === secretNumber.textContent) {
+    highscore.textContent = score.textContent;
+  }
+} //????
