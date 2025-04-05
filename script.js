@@ -76,3 +76,56 @@ function messages() {
     message.textContent = '💥 You lost the game!';
   }
 }
+function redustionScore() {
+  if (guessesNumberTwo === 20) {
+    value = 3;
+  } else if (guessesNumberTwo === 10) {
+    value = 2;
+  } else {
+    value = 1;
+  }
+}
+function minus() {
+  console.log('secreNumber.texContent', secretNumber.textContent);
+  if (guessNumber > random) {
+    number = number - value;
+    score.textContent = number;
+  } else if (guessNumber < random) {
+    number = number - value;
+    score.textContent = number;
+  }
+}
+function highscores() {
+  if (guessNumber === random) {
+    if (highscore.textContent < score.textContent) {
+      highscore.textContent = score.textContent;
+    } else {
+      highscore.textContent = score.textContent;
+    }
+  }
+}
+
+function backgroundColor() {
+  if (guessNumber === random) {
+    body.style.backgroundColor = '#60b346';
+    secretNumber.style.padding = '55px';
+  } else if (guessesNumberTwo === 0) {
+    body.style.backgroundColor = 'red';
+    message.textContent = '💥 You lost the game!';
+  } else if (number < 1) {
+    body.style.backgroundColor = 'red';
+    message.textContent = '💥 You lost the game!';
+  }
+}
+function againBtn() {
+  random = Math.trunc(Math.random() * 20) + 1;
+  secretNumber.textContent = '?';
+  number = 20;
+  score.textContent = number;
+  body.style.backgroundColor = '#222';
+  message.textContent = 'Start guessing...';
+  guess.value = '';
+  header.classList.add('blure');
+  main.classList.add('blure');
+  modal.classList.remove('hidden');
+}
