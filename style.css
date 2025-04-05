@@ -6,6 +6,7 @@ body {
   font-family: 'Press Start 2P', sans-serif;
   color: #eee;
   background-color: #222;
+  position: relative;
 }
 /*HEADER*/
 header {
@@ -72,6 +73,9 @@ main {
   text-align: center;
   font-size: 60px;
 }
+input {
+  cursor: pointer;
+}
 .btn-check {
   font-family: 'Press Start 2P', sans-serif;
   align-items: center;
@@ -86,3 +90,4 @@ main {
   flex-direction: column;
   gap: 50px;
 }
+/*MODAL*/

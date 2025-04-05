@@ -11,7 +11,7 @@
     <title>Guess My Number!</title>
   </head>
   <body>
-    <header>
+    <header class="header blure">
       <div id="mini-box-1">
         <button class="btn-again">Again!</button>
         <p class="between">(Between 1 and 20)</p>
@@ -19,7 +19,7 @@
       <h1 id="h1-1">Guess My Number!</h1>
       <div class="number">?</div>
     </header>
-    <main>
+    <main class="main blure">
       <div class="left">
         <input type="number" class="guess" />
         <button class="btn-check">Check!</button>
@@ -31,6 +31,22 @@
         <p>👾 Guesses:<span id="guesses">0</span></p>
       </div>
     </main>
+    <div class="modal">
+      <h2>Choose difficulty level:</h2>
+      <div>
+        <input type="radio" id="easy" name="inp-1" />
+        <label for="easy">easy (20 guesses)</label>
+      </div>
+      <div>
+        <input type="radio" id="medium" name="inp-1" />
+        <label for="medium">medium (10 guesses)</label>
+      </div>
+      <div>
+        <input type="radio" id="hard" name="inp-1" />
+        <label for="hard">hard (5 guesses)</label>
+      </div>
+      <button id="btn-start">Start!</button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
