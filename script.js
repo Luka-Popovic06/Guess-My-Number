@@ -55,3 +55,24 @@ inpHard.addEventListener('input', function (e) {
   guessesNumberTwo = 5;
   guesses.textContent = guessesNumberTwo;
 });
+function guessesValue() {
+  guessesNumberTwo = guessesNumberTwo - 1;
+  guesses.textContent = guessesNumberTwo;
+}
+
+function messages() {
+  if (guessNumber > random) {
+    message.textContent = '📈 Too high!';
+  } else if (guessNumber < random) {
+    message.textContent = '📉 Too low!';
+  } else if (!guessNumber) {
+    message.textContent = '⛔️ No number!';
+  } else if ((guessNumber = random)) {
+    message.textContent = '🎉 Correct Number!';
+    secretNumber.textContent = random;
+  } else if (number < 1) {
+    message.textContent = '💥 You lost the game!';
+  } else if ((guessesNumberTwo = 0)) {
+    message.textContent = '💥 You lost the game!';
+  }
+}
