@@ -70,10 +70,7 @@ function messages() {
   } else if ((guessNumber = random)) {
     message.textContent = '🎉 Correct Number!';
     secretNumber.textContent = random;
-  } else if (number < 1) {
-    message.textContent = '💥 You lost the game!';
-  } else if ((guessesNumberTwo = 0)) {
-    message.textContent = '💥 You lost the game!';
+    check.disabled = true;
   }
 }
 function redustionScore() {
@@ -112,9 +109,11 @@ function backgroundColor() {
   } else if (guessesNumberTwo === 0) {
     body.style.backgroundColor = 'red';
     message.textContent = '💥 You lost the game!';
+    check.disabled = true;
   } else if (number < 1) {
     body.style.backgroundColor = 'red';
     message.textContent = '💥 You lost the game!';
+    check.disabled = true;
   }
 }
 function againBtn() {
@@ -128,4 +127,5 @@ function againBtn() {
   header.classList.add('blure');
   main.classList.add('blure');
   modal.classList.remove('hidden');
+  check.disabled = false;
 }
