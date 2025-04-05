@@ -20,3 +20,26 @@ let guessesNumberTwo;
 let number = 20;
 let value = 1;
 let guessNumber;
+btnStart.addEventListener('click', function () {
+  start();
+  redustionScore();
+});
+function start() {
+  header.classList.remove('blure');
+  main.classList.remove('blure');
+  modal.classList.add('hidden');
+}
+check.addEventListener('click', function () {
+  guessesValue();
+  minus();
+  messages();
+  highscores();
+  backgroundColor();
+});
+again.addEventListener('click', function () {
+  againBtn();
+});
+
+guess.addEventListener('input', function (e) {
+  guessNumber = e.target.value;
+});
