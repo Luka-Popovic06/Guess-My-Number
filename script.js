@@ -43,3 +43,15 @@ again.addEventListener('click', function () {
 guess.addEventListener('input', function (e) {
   guessNumber = e.target.value;
 });
+inpEasy.addEventListener('input', function (e) {
+  guessesNumberTwo = 20;
+  guesses.textContent = guessesNumberTwo;
+});
+inpMedium.addEventListener('input', function (e) {
+  guessesNumberTwo = 10;
+  guesses.textContent = guessesNumberTwo;
+});
+inpHard.addEventListener('input', function (e) {
+  guessesNumberTwo = 5;
+  guesses.textContent = guessesNumberTwo;
+});
