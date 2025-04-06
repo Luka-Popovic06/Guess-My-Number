@@ -16,8 +16,8 @@ const inpMedium = document.querySelector('#medium');
 const inpHard = document.querySelector('#hard');
 const btnStart = document.querySelector('#btn-start');
 let random = Math.trunc(Math.random() * 20) + 1;
-let guessesNumberTwo;
-let number = 20;
+let difficulty;
+let scoreNumber = 20;
 let value = 1;
 let guessNumber;
 btnStart.addEventListener('click', function () {
@@ -44,20 +44,20 @@ guess.addEventListener('input', function (e) {
   guessNumber = e.target.value;
 });
 inpEasy.addEventListener('input', function (e) {
-  guessesNumberTwo = 20;
-  guesses.textContent = guessesNumberTwo;
+  difficulty = 20;
+  guesses.textContent = difficulty;
 });
 inpMedium.addEventListener('input', function (e) {
-  guessesNumberTwo = 10;
-  guesses.textContent = guessesNumberTwo;
+  difficulty = 10;
+  guesses.textContent = difficulty;
 });
 inpHard.addEventListener('input', function (e) {
-  guessesNumberTwo = 5;
-  guesses.textContent = guessesNumberTwo;
+  difficulty = 5;
+  guesses.textContent = difficulty;
 });
 function guessesValue() {
-  guessesNumberTwo = guessesNumberTwo - 1;
-  guesses.textContent = guessesNumberTwo;
+  difficulty = difficulty - 1;
+  guesses.textContent = difficulty;
 }
 
 function messages() {
@@ -74,22 +74,26 @@ function messages() {
   }
 }
 function redustionScore() {
-  if (guessesNumberTwo === 20) {
+  /*if (difficulty === 'hard') {
+    guesses=20;
+    removeGuessesPerClick=3;
+  }*/
+
+  if (difficulty === 20) {
     value = 3;
-  } else if (guessesNumberTwo === 10) {
+  } else if (difficulty === 10) {
     value = 2;
   } else {
     value = 1;
   }
 }
 function minus() {
-  console.log('secreNumber.texContent', secretNumber.textContent);
   if (guessNumber > random) {
-    number = number - value;
-    score.textContent = number;
+    scoreNumber = scoreNumber - value;
+    score.textContent = scoreNumber;
   } else if (guessNumber < random) {
-    number = number - value;
-    score.textContent = number;
+    scoreNumber = scoreNumber - value;
+    score.textContent = scoreNumber;
   }
 }
 function highscores() {
@@ -106,12 +110,14 @@ function backgroundColor() {
   if (guessNumber === random) {
     body.style.backgroundColor = '#60b346';
     secretNumber.style.padding = '55px';
-  } else if (guessesNumberTwo === 0) {
+  } else if (difficulty === 0) {
     body.style.backgroundColor = 'red';
     message.textContent = '💥 You lost the game!';
+    secretNumber.textContent = random;
     check.disabled = true;
-  } else if (number < 1) {
+  } else if (scoreNumber < 1) {
     body.style.backgroundColor = 'red';
+    secretNumber.textContent = random;
     message.textContent = '💥 You lost the game!';
     check.disabled = true;
   }
@@ -119,8 +125,8 @@ function backgroundColor() {
 function againBtn() {
   random = Math.trunc(Math.random() * 20) + 1;
   secretNumber.textContent = '?';
-  number = 20;
-  score.textContent = number;
+  scoreNumber = 20;
+  score.textContent = scoreNumber;
   body.style.backgroundColor = '#222';
   message.textContent = 'Start guessing...';
   guess.value = '';
